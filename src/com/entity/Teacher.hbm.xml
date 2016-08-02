@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-2 15:20:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.entity.Teacher" table="TEACHER">
+        <id name="tid" type="java.lang.Integer">
+            <column name="TID" />
+            <generator class="assigned" />
+        </id>
+        <property name="tname" type="java.lang.String">
+            <column name="TNAME" />
+        </property>
+        <property name="tpassword" type="java.lang.String">
+            <column name="TPASSWORD" />
+        </property>
+        <property name="tsex" type="java.lang.String">
+            <column name="TSEX" />
+        </property>
+        <property name="tage" type="java.lang.String">
+            <column name="TAGE" />
+        </property>
+        <property name="tdepartment" type="java.lang.String">
+            <column name="TDEPARTMENT" />
+        </property>
+        <property name="tclass" type="java.lang.String">
+            <column name="TCLASS" />
+        </property>
+    </class>
+</hibernate-mapping>

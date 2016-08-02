@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	</package>
+	<package name="admin" namespace="/Login" extends="default">
+	<action name="*_*" class="com.action.{1}Action" method="{2}">
+		<result name="login_success">/Login/login_success.jsp</result>
+		<result name="login_failure">/Login/login.jsp</result>
+		<result name="login_out">/Login/login.jsp</result>
+		<result name="input">/Login/login.jsp</result>
+		<result name="updatepassword_success">/Login/updatepassword_success.jsp</result>
+		<result name="updatepassword_failure">/Login/updatepassword.jsp</result>
+	</action> 
+	</package>
+	
+	<package name="student" namespace="/Student" extends="default">
+	<action name="*_*" class="com.action.{1}Action" method="{2}">
+		<result name="query_success">/Student/query_success.jsp</result>
+		<result name="delete_success" type="chain">Student_query</result>
+		<result name="add_success" type="chain">Student_query</result>
+		<result name="update_success" type="chain">Student_query</result>
+		<result name="queryone_success">/Student/update_success.jsp</result>
+	</action>
+	</package>
+	<package name="teacher" namespace="/Teacher" extends="default">
+	<action name="*_*" class="com.action.{1}Action" method="{2}">
+		<result name="query_success">/Teacher/query_success.jsp</result>
+		<result name="delete_success" type="chain">Teacher_query</result>
+		<result name="add_success" type="chain">Teacher_query</result>
+		<result name="update_success" type="chain">Teacher_query</result>
+		<result name="queryone_success">/Teacher/update_success.jsp</result>
+		<result name="select">/Student/add_success.jsp</result>
+	</action>
+	</package>
+	<package name="class" namespace="/Class" extends="default">
+	<action name="*_*" class="com.action.{1}Action" method="{2}">
+		<result name="query_success">/Class/query_success.jsp</result>
+		<result name="delete_success" type="chain">Class_query</result>
+		<result name="add_success" type="chain">Class_query</result>
+		<result name="update_success" type="chain">Class_query</result>
+		<result name="queryone_success">/Class/update_success.jsp</result>
+	</action>
+	</package>
+	
+</struts>    

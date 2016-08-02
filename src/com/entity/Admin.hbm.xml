@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-2 14:45:58 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.entity.Admin" table="ADMIN">
+        <id name="aid" type="java.lang.Integer">
+            <column name="AID" />
+            <generator class="assigned" />
+        </id>
+        <property name="aname" type="java.lang.String">
+            <column name="ANAME" />
+        </property>
+        <property name="apassword" type="java.lang.String">
+            <column name="APASSWORD" />
+        </property>
+        <property name="choose" type="java.lang.String">
+            <column name="CHOOSE" />
+        </property>
+    </class>
+</hibernate-mapping>
