@@ -7,11 +7,9 @@ import com.service.impl.TeacherDaoImpl;
 
 public class TeacherAction extends SuperAction{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
+	//查询全部教师信息
 	public String query(){
 		TeacherDao tdao = new TeacherDaoImpl();
 		List<Teacher> list = tdao.queryAllTeacher();
@@ -23,6 +21,8 @@ public class TeacherAction extends SuperAction{
 		}
 		return "query_success";
 	}
+	
+	//查询一个教师信息
 	public String queryone(){
 		String tid =request.getParameter("tid");
 		TeacherDao tdao = new TeacherDaoImpl();
@@ -30,16 +30,19 @@ public class TeacherAction extends SuperAction{
 		session.setAttribute("teacher_listone", list);
 		return "queryone_success";
 	}
+	
+	//删除教师信息
 	public String delete(){
 		TeacherDao tdao = new TeacherDaoImpl();
 		String tid = request.getParameter("tid");
 		tdao.deleteTeacher(Integer.parseInt(tid));
 		return "delete_success";
 	}
+	
+	//添加教师信息
 	public String add() {
 		TeacherDao sdao = new TeacherDaoImpl();
 		Teacher t = new Teacher();
-//		t.setTid(Integer.getInteger(request.getParameter("tid")));
 		t.setTname(request.getParameter("tname"));
 		t.setTpassword(request.getParameter("tpassword"));
 		t.setTsex(request.getParameter("tsex"));
@@ -49,6 +52,8 @@ public class TeacherAction extends SuperAction{
 		sdao.addTeacher(t);
 		return "add_success";
 	}
+	
+	//修改教师信息
 	public String update() {
 		TeacherDao sdao = new TeacherDaoImpl();
 		Teacher t = new Teacher();

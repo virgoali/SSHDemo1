@@ -12,10 +12,10 @@ import com.service.TeacherDao;
 
 public class TeacherDaoImpl implements TeacherDao {
 
+	//查询全部教师信息方法
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Teacher> queryAllTeacher() {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		List<Teacher> list = null;
 		try
@@ -42,9 +42,10 @@ public class TeacherDaoImpl implements TeacherDao {
 			}
 		}
 	}
+	
+	//查询一个教师信息方法
 	@Override
 	public Teacher queryOneTeacher(String t) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		Teacher list = null;
 		try
@@ -69,6 +70,8 @@ public class TeacherDaoImpl implements TeacherDao {
 			}
 		}
 	}
+	
+	//获取教师主键值方法
 	public Integer getNewTid(){
 		Transaction tx = null;
 		Integer tid = null;
@@ -102,9 +105,10 @@ public class TeacherDaoImpl implements TeacherDao {
 			}
 		}
 	}
+	
+	//添加教师信息方法
 	@Override
 	public boolean addTeacher(Teacher t) {
-		// TODO Auto-generated method stub
 		t.setTid(getNewTid());
 		Transaction tx = null;
 		try
@@ -131,9 +135,9 @@ public class TeacherDaoImpl implements TeacherDao {
 		}
 	}
 
+	//修改教师信息方法
 	@Override
 	public boolean updateTeacher(Teacher t) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{
@@ -146,7 +150,6 @@ public class TeacherDaoImpl implements TeacherDao {
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-//			tx.rollback();
 			tx.commit();
 			return false;
 		}
@@ -159,9 +162,9 @@ public class TeacherDaoImpl implements TeacherDao {
 		}
 	}
 
+	//删除教师信息方法
 	@Override
 	public boolean deleteTeacher(Integer tid) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{

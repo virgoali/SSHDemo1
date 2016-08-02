@@ -10,11 +10,11 @@ import com.entity.Student;
 import com.service.StudentDao;
 
 public class StudentDaoImpl implements StudentDao {
-
+	
+	//查询全部学生信息方法
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Student> queryAllStudent() {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		List<Student> list = null;
 		try
@@ -41,9 +41,10 @@ public class StudentDaoImpl implements StudentDao {
 			}
 		}
 	}
+	
+	//查询一个学生信息方法
 	@Override
 	public Student queryOneStudent(String s) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		Student list = null;
 		try
@@ -68,6 +69,8 @@ public class StudentDaoImpl implements StudentDao {
 			}
 		}
 	}
+	
+	//获取学生主键值方法
 	public Integer getNewSno(){
 		Transaction tx = null;
 		Integer sno = null;
@@ -101,9 +104,10 @@ public class StudentDaoImpl implements StudentDao {
 			}
 		}
 	}
+	
+	//添加学生信息方法
 	@Override
 	public boolean addStudent(Student s) {
-		// TODO Auto-generated method stub
 		s.setSno(getNewSno());
 		Transaction tx = null;
 		try
@@ -130,9 +134,9 @@ public class StudentDaoImpl implements StudentDao {
 		}
 	}
 
+	//修改学生信息方法
 	@Override
 	public boolean updateStudent(Student s) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{
@@ -145,7 +149,6 @@ public class StudentDaoImpl implements StudentDao {
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-//			tx.rollback();
 			tx.commit();
 			return false;
 		}
@@ -158,9 +161,9 @@ public class StudentDaoImpl implements StudentDao {
 		}
 	}
 
+	//删除学生信息方法
 	@Override
 	public boolean deleteStudent(Integer sno) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{

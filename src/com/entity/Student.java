@@ -1,12 +1,7 @@
 package com.entity;
 
-/**
- * Student entity. @author MyEclipse Persistence Tools
- */
-
+//学生实体类
 public class Student{
-
-	// Fields
 
 	private Integer sno;
 	private String spassword;
@@ -16,6 +11,21 @@ public class Student{
 	private String saddress;
 	private String department;
 	
+	public Student() {
+		
+	}
+	
+	public Student(Integer sno, String spassword, String sname, String ssex, String sage, String saddress,
+			String department, Teacher tname) {
+		this.sno = sno;
+		this.spassword = spassword;
+		this.sname = sname;
+		this.ssex = ssex;
+		this.sage = sage;
+		this.saddress = saddress;
+		this.department = department;
+	}
+
 	public Integer getSno() {
 		return sno;
 	}
@@ -64,18 +74,6 @@ public class Student{
 	public String toString() {
 		return "Student [sno=" + sno + ", spassword=" + spassword + ", sname=" + sname + ", ssex=" + ssex + ", sage="
 				+ sage + ", saddress=" + saddress + ", department=" + department + "]";
-	}
-	public Student() {
-	}
-	public Student(Integer sno, String spassword, String sname, String ssex, String sage, String saddress,
-			String department, Teacher tname) {
-		this.sno = sno;
-		this.spassword = spassword;
-		this.sname = sname;
-		this.ssex = ssex;
-		this.sage = sage;
-		this.saddress = saddress;
-		this.department = department;
 	}
 
 

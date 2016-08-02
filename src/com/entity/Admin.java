@@ -1,36 +1,24 @@
 package com.entity;
 
-/**
- * Admin entity. @author MyEclipse Persistence Tools
- */
-
+//登录账户实体类
 public class Admin implements java.io.Serializable {
 
-	// Fields
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Integer aid;
 	private String aname;
 	private String apassword;
 	private String choose;
 
-	// Constructors
-
-	/** default constructor */
 	public Admin() {
+		
 	}
 
-	/** full constructor */
 	public Admin(String aname, String apassword, String choose) {
 		this.aname = aname;
 		this.apassword = apassword;
 		this.choose = choose;
 	}
 
-	// Property accessors
 
 	public Integer getAid() {
 		return this.aid;

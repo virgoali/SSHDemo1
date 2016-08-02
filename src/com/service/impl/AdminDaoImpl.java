@@ -11,7 +11,8 @@ import com.entity.Admin;
 import com.service.AdminDao;
 
 public class AdminDaoImpl implements AdminDao{
-
+	
+	//登录判断方法
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean adminlogin(Admin a) {
@@ -49,6 +50,8 @@ public class AdminDaoImpl implements AdminDao{
 			}
 		}
 	}
+	
+	//修改密码方法
 	@Override
 	public boolean UpdatePassword(Admin a,Admin b){
 		Transaction tx = null;

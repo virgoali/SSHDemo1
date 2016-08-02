@@ -9,9 +9,7 @@ import com.service.impl.AdminDaoImpl;
 
 public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 
-	/**
-	 * 
-	 */
+	//登录
 	private static final long serialVersionUID = 1L;
 	private Admin admin = new Admin();
 	public String login()
@@ -28,7 +26,8 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			return "login_failure";
 		}
 	}
-
+	
+	//账号退出
 	@SkipValidation
 	public String LoginOut(){
 		if(session.getAttribute("AdminLoginName")!=null){
@@ -37,6 +36,7 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 		return "login_out";
 	}
 	
+	//登录信息报错
 	@Override
 	public void validate() {
 		// TODO Auto-generated method stub
@@ -44,6 +44,8 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			this.addFieldError("AdminNameError", "请输入正确的用户名和密码！！！");
 		}
 	}
+	
+	//账户密码修改
 	public String updatepassword(){
 		AdminDao adao = new AdminDaoImpl();
 		Admin a = new Admin();

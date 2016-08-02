@@ -7,11 +7,8 @@ import com.service.impl.StudentDaoImpl;
 
 public class StudentAction extends SuperAction{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	//查询全部学生
+	//查询全部学生信息
 	public String query(){
 		StudentDao sdao = new StudentDaoImpl();
 		List<Student> list = sdao.queryAllStudent();
@@ -23,7 +20,8 @@ public class StudentAction extends SuperAction{
 		}
 		return "query_success";
 	}
-	//查询单个学生
+	
+	//查询一个学生信息
 	public String queryone(){
 		String sno =request.getParameter("sno");
 		StudentDao sdao = new StudentDaoImpl();
@@ -31,14 +29,16 @@ public class StudentAction extends SuperAction{
 		session.setAttribute("student_listone", list);
 		return "queryone_success";
 	}
-	//删除学生
+	
+	//删除学生信息
 	public String delete(){
 		StudentDao sdao = new StudentDaoImpl();
 		String sno = request.getParameter("sno");
 		sdao.deleteStudent(Integer.parseInt(sno));
 		return "delete_success";
 	}
-	//添加学生
+	
+	//添加学生信息
 	public String add() {
 		StudentDao sdao = new StudentDaoImpl();
 		Student s = new Student();
@@ -51,7 +51,8 @@ public class StudentAction extends SuperAction{
 		sdao.addStudent(s);
 		return "add_success";
 	}
-	//修改学生
+	
+	//修改学生信息
 	public String update() {
 		StudentDao sdao = new StudentDaoImpl();
 		Student s = new Student();

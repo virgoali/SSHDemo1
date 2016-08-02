@@ -11,10 +11,10 @@ import com.service.ClassDao;
 
 public class ClassDaoImpl implements ClassDao {
 
+	//查询全部班级信息方法
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Class> queryAllClass() {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		List<Class> list = null;
 		try
@@ -41,9 +41,10 @@ public class ClassDaoImpl implements ClassDao {
 			}
 		}
 	}
+	
+	//查询一个班级信息方法
 	@Override
 	public Class queryOneClass(String c) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		Class list = null;
 		try
@@ -68,6 +69,8 @@ public class ClassDaoImpl implements ClassDao {
 			}
 		}
 	}
+	
+	//获取班级主键值方法
 	public Integer getNewCid(){
 		Transaction tx = null;
 		Integer cid = null;
@@ -101,9 +104,10 @@ public class ClassDaoImpl implements ClassDao {
 			}
 		}
 	}
+	
+	//添加班级信息方法
 	@Override
 	public boolean addClass(Class c) {
-		// TODO Auto-generated method stub
 		c.setCid(getNewCid());
 		Transaction tx = null;
 		try
@@ -130,9 +134,9 @@ public class ClassDaoImpl implements ClassDao {
 		}
 	}
 
+	//修改班级信息方法
 	@Override
 	public boolean updateClass(Class c) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{
@@ -145,7 +149,6 @@ public class ClassDaoImpl implements ClassDao {
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-//			tx.rollback();
 			tx.commit();
 			return false;
 		}
@@ -158,9 +161,9 @@ public class ClassDaoImpl implements ClassDao {
 		}
 	}
 
+	//删除班级信息方法
 	@Override
 	public boolean deleteClass(Integer cid) {
-		// TODO Auto-generated method stub
 		Transaction tx = null;
 		try
 		{

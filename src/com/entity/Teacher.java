@@ -1,5 +1,6 @@
 package com.entity;
 
+//教师实体类
 public class Teacher implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -12,6 +13,7 @@ public class Teacher implements java.io.Serializable {
 	private String tclass;
 
 	public Teacher() {
+		
 	}
 
 	public Teacher(Integer tid, String tname, String tpassword, String tsex, String tage, String tdepartment,
