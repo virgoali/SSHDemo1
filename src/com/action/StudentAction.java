@@ -2,7 +2,6 @@ package com.action;
 
 import java.util.List;
 import com.entity.Student;
-import com.entity.Teacher;
 import com.service.StudentDao;
 import com.service.impl.StudentDaoImpl;
 
@@ -43,15 +42,12 @@ public class StudentAction extends SuperAction{
 	public String add() {
 		StudentDao sdao = new StudentDaoImpl();
 		Student s = new Student();
-		Teacher t = new Teacher();
-		t.setTname(request.getParameter("tname"));
 		s.setSpassword(request.getParameter("spassword"));
 		s.setSname(request.getParameter("sname"));
 		s.setSsex(request.getParameter("ssex"));
 		s.setSage(request.getParameter("sage"));
 		s.setSaddress(request.getParameter("saddress"));
 		s.setDepartment(request.getParameter("department"));
-		s.setTname(t);
 		sdao.addStudent(s);
 		return "add_success";
 	}

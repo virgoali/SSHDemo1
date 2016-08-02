@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2016-8-2 14:45:58 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2016-8-2 21:09:46 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.entity.Class" table="CLASS">
         <id name="cid" type="java.lang.Integer">

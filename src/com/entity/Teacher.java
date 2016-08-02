@@ -1,8 +1,5 @@
 package com.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Teacher implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -13,13 +10,12 @@ public class Teacher implements java.io.Serializable {
 	private String tage;
 	private String tdepartment;
 	private String tclass;
-	private Set<Student> students = new HashSet<Student>();
 
 	public Teacher() {
 	}
 
 	public Teacher(Integer tid, String tname, String tpassword, String tsex, String tage, String tdepartment,
-			String tclass, Set<Student> students) {
+			String tclass) {
 		this.tid = tid;
 		this.tname = tname;
 		this.tpassword = tpassword;
@@ -27,7 +23,6 @@ public class Teacher implements java.io.Serializable {
 		this.tage = tage;
 		this.tdepartment = tdepartment;
 		this.tclass = tclass;
-		this.students = students;
 	}
 
 
@@ -86,18 +81,10 @@ public class Teacher implements java.io.Serializable {
 		this.tclass = tclass;
 	}
 
-	public Set<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(Set<Student> students) {
-		this.students = students;
-	}
-
 	@Override
 	public String toString() {
 		return "Teacher [tid=" + tid + ", tname=" + tname + ", tpassword=" + tpassword + ", tsex=" + tsex + ", tage="
-				+ tage + ", tdepartment=" + tdepartment + ", tclass=" + tclass + ", students=" + students + "]";
+				+ tage + ", tdepartment=" + tdepartment + ", tclass=" + tclass + "]";
 	}
 	
 }

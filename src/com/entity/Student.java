@@ -15,7 +15,6 @@ public class Student{
 	private String sage;
 	private String saddress;
 	private String department;
-	private Teacher tname;
 	
 	public Integer getSno() {
 		return sno;
@@ -59,18 +58,12 @@ public class Student{
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public Teacher getTname() {
-		return tname;
-	}
-	public void setTname(Teacher tname) {
-		this.tname = tname;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Student [sno=" + sno + ", spassword=" + spassword + ", sname=" + sname + ", ssex=" + ssex + ", sage="
-				+ sage + ", saddress=" + saddress + ", department=" + department + ", tname=" + tname + "]";
+				+ sage + ", saddress=" + saddress + ", department=" + department + "]";
 	}
 	public Student() {
 	}
